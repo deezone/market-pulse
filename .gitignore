@@ -10,3 +10,19 @@
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
+*.coverprofile
+
+# GoLand IDE settings
+.idea
+
+# Vendor files
+vendor/
+
+# Node ignores
+node_modules
+
+# NPM ignores
+npm-debug.log
+
+# Generated docs
+docs/api-output.html
