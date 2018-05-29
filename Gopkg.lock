@@ -2,6 +2,24 @@
 
 
 [[projects]]
+  branch = "master"
+  name = "github.com/jmoiron/sqlx"
+  packages = [
+    ".",
+    "reflectx"
+  ]
+  revision = "2aeb6a910c2b94f2d5eb53d9895d80e27264ec41"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/lib/pq"
+  packages = [
+    ".",
+    "oid"
+  ]
+  revision = "90697d60dd844d5ef6ff15135d0203f65d2f53b8"
+
+[[projects]]
   name = "github.com/marksost/configurator"
   packages = ["."]
   revision = "c4ed3414fda75f8356d7af6a1b2de14e42beae5f"
@@ -37,6 +55,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "7c83803ce875f2a66a242c37cb5eb5a5d848c6df89d80f8fb9c9179a32ca8e18"
+  inputs-digest = "fa106a456550e856d752170d8fb7479dc4cab35c5a86c02939731fa6c388745d"
   solver-name = "gps-cdcl"
   solver-version = 1

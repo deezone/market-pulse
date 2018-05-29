@@ -5,7 +5,6 @@ package config
 
 import (
 	// Standard lib
-	"encoding/json"
 	"time"
 
 	// Third-party
@@ -20,7 +19,7 @@ const (
 	EnvTesting     = "test"
 
 	// Environment variable prefix
-	EnvPrefix = "ForexClock_"
+	EnvPrefix = "forex-clock_"
 
 	// Environment variable where the path to an outside
 	// configuration file is located
@@ -80,16 +79,14 @@ type (
 		Timeouts struct {
 			// Timeout (in seconds) allowed for server read operations
 			Read int `json:"read" env:"SERVER_READ_TIMEOUT" default:"30"`
-			// Timeout (in seconds) allowed for server to shutdown
-			ShutDown int `json:"shutdown" env:"SERVER_SHUTDOWN_TIMEOUT" default:"5"`
 			// Timeout (in seconds) allowed for server write operations
 			Write int `json:"write" env:"SERVER_WRITE_TIMEOUT" default:"30"`
+			// Timeout (in seconds) allowed for server to shutdown
+			ShutDown int `json:"shutdown" env:"SERVER_SHUTDOWN_TIMEOUT" default:"5"`
 		} `json:"timeouts"`
 	}
 
-	// Config is a struct containing all configuration settings for the application.
-	// NOTE: Only a single instance of this struct should be used throughout the application
-	// so as to reference the same configuration state.
+	// Config is a struct containing all configuration settings for the application
 	Config struct {
 		/* Top-level configuration */
 
@@ -97,7 +94,7 @@ type (
 		Environment string `json:"environment" env:"ENVIRONMENT" default:"dev"`
 
 		// Name of the application
-		Name string `json:"name" env:"NAME" default:"fed"`
+		Name string `json:"name" env:"NAME" default:"forex-clock"`
 
 		// The current release version of the application
 		ReleaseVersion string `json:"release-version" env:"RELEASE_VERSION" default:""`
@@ -118,7 +115,7 @@ type (
 	}
 )
 
-// setLoggerSettings sets the application logger's various properties
+// setLoggerSettings sets the application's various logger properties
 func (c *Config) setLoggerSettings() {
 	// Set logging level based on config value
 	switch c.Log.Level {

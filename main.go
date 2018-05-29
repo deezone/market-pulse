@@ -7,6 +7,8 @@ package main
 import (
 	// Standard lib
 	"fmt"
+	"os"
+	"os/signal"
 
 	// Internal
 	"github.com/deezone/forex-clock/config"
@@ -23,11 +25,27 @@ func main() {
 	fmt.Println(m)
 	log.Info(m)
 
+	// Initialize configuration
+	config.Init()
+
 	// Create new server
 	s := server.NewServer()
 
 	// Start server
 	if err := s.Start(); err != nil {
 		panic("Error starting application. Error was: " + err.Error())
+	}
+
+	// Listen for and exit the application on SIGKILL or SIGINT
+	stop := make(chan os.Signal)
+	signal.Notify(stop, os.Interrupt, os.Kill)
+
+	select {
+	case <-stop:
+		// Attempt to stop the server
+		s.Stop()
+
+		// Log shut down
+		log.Info("Server is shutting down")
 	}
 }
