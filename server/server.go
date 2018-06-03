@@ -3,6 +3,8 @@ package server
 
 import (
 	// Standard lib
+	"context"
+	"errors"
 	"fmt"
 	"net/http"
 	"time"
@@ -10,8 +12,7 @@ import (
 	// Internal
 	"github.com/deezone/forex-clock/config"
 	"github.com/deezone/forex-clock/db"
-	"errors"
-	"context"
+	"github.com/deezone/forex-clock/server/middleware"
 )
 
 type (

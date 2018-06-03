@@ -45,7 +45,7 @@ An instrument that measures the happiness of large populations in real time.
 
 ## Endpoints
 
-API endpoints (methods and request / responses) are defined as part of an [API Blueprint](https://apiblueprint.org/) document at [here](https://github.com/deezone/forex-clock/blob/master/docs/api.apib). To view, generate the documentation and visit `docs/api-output.html` in a browser.
+API endpoints (methods and request / responses) are defined as part of an [API Blueprint](https://apiblueprint.org/) document at [/docs/api.apib](https://github.com/deezone/forex-clock/blob/master/docs/api.apib). To view, generate the documentation and visit `docs/api-output.html` in a browser.
 
 ### Generating API docs
 

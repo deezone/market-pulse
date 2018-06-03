@@ -2,6 +2,18 @@
 
 
 [[projects]]
+  name = "github.com/gorilla/context"
+  packages = ["."]
+  revision = "08b5f424b9271eedf6f9f0ce86cb9396ed337a42"
+  version = "v1.1.1"
+
+[[projects]]
+  name = "github.com/gorilla/mux"
+  packages = ["."]
+  revision = "e3702bed27f0d39777b0b37b664b6280e8ef8fbf"
+  version = "v1.6.2"
+
+[[projects]]
   branch = "master"
   name = "github.com/jmoiron/sqlx"
   packages = [
@@ -9,6 +21,12 @@
     "reflectx"
   ]
   revision = "2aeb6a910c2b94f2d5eb53d9895d80e27264ec41"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/justinas/alice"
+  packages = ["."]
+  revision = "03f45bd4b7dad4734bc4620e46a35789349abb20"
 
 [[projects]]
   branch = "master"
@@ -30,6 +48,12 @@
   packages = ["."]
   revision = "3d836a854901d307006c13eef62a1c4fe9209f4b"
   version = "0.2.0"
+
+[[projects]]
+  name = "github.com/rs/cors"
+  packages = ["."]
+  revision = "ca016a06a5753f8ba03029c0aa5e54afb1bf713f"
+  version = "v1.4.0"
 
 [[projects]]
   name = "github.com/sirupsen/logrus"
@@ -55,6 +79,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "fa106a456550e856d752170d8fb7479dc4cab35c5a86c02939731fa6c388745d"
+  inputs-digest = "72682698c092c15e146b2ddca39093de0fee5d35cefc9196014f709354671417"
   solver-name = "gps-cdcl"
   solver-version = 1
