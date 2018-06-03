@@ -1,0 +1,16 @@
+{
+  "name": "forex-clock",
+  "description": "An API for gathering information related to the FOREX market.",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deezone/forex-clock"
+  },
+  "private": false,
+  "scripts": {
+    "generate-api-docs": "aglio --theme-variables streak -i docs/api.apib -o docs/api-output.html"
+  },
+  "devDependencies": {
+    "aglio": "~2.3.0"
+  }
+}

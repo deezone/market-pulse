@@ -1,0 +1,99 @@
+FORMAT: 1A
+
+# FOREX-Clock API Blueprint
+
+An information service for the FOREX market.
+
+
+
+# Group Health
+
+Utility endpoints the represent health checks.
+
+## Ready [/ready]
+
+Provides information about the connected services. Used to determine if the service is considered "ready".
+
+### Check the "readiness" of the application [GET]
+
++ Response 200 (application/json)
+  + Attributes (Ready Success)
+
++ Response 500 (application/json)
+  + Attributes (Ready Failure)
+
+
+## Health [/health]
+
+Provides information about the health of the service but does not include the connected service checks. Used to check if the service is "reachable".
+
+### Check the health of the application [GET]
+
++ Response 200 (application/json)
+  + Attributes (Health Success)
+
+
+## Version [/version]
+
+The current **release version** of the application as defined by an environment variable.
+
+### Get the version of the application [GET]
+
++ Response 200 (application/json)
+  + Attributes (Version Success)
+
+D33L0ves
+# Data Structures
+
+### Health endpoints
+
+## Health Data (object)
+
++ `uptime`: `8000` (number) - TIn seconds
+
+## Ready Data (Health Data)
+
++ `service`: `ok` (string) - General health of the application
++ `db`: `ok` (string) - Database health
++ `db-type`: `ok` (string) - The type of database in use
+
+## Ready Success (object)
+
++ `meta` (object)
++ `data` (Ready Data)
+
+## Ready Failure (object)
+
++ `meta` (object)
++ `data` (Ready Data)
+    - `db`: `error` (string) - Database in not usable state
+
+## Health Success (object)
+
++ `meta` (object)
++ `data` (Health Data)
+
+## Version Success (object)
+
++ `meta` (object)
++ `data` (Health Data)
+    - `version`: `0.0.0` (string) - Release version of the current;y running application
+
+
+### Default responses
+
+## Not Found (object)
+
++ `meta` (object)
+
+## Method Not Allowed (object)
+
++ `meta` (object)
+
+## Method Not Implemented (object)
+
++ `meta` (object)
+
+## Internal Server Error (object)
+
++ `meta` (object, required)
