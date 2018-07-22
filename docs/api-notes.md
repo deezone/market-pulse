@@ -22,6 +22,21 @@ make docs
 
 which is based on the `docs/api.apib` file. Output can be viewed by opening `docs/api-output.html` in a browser.
 
+## Setup
+
+### Configuration using `github.com/marksost/configurator`
+
+See https://github.com/marksost/configurator for an explination of how configuration values are determined based on the priority of the source:
+- default values
+
+Example: `Username string `json:"username" env:"DB_USERNAME" default:"forex-clock"` where the default `DB_USERNAME` value is "forex-clock"
+- JSON configuration file
+
+> Configuration files like this are not normally used in non-development environments, but are a convenient way to develop locally without having to set a ton of environment variables.
+
+- environment variables
+- command-line flag
+
 ## Testing
 
 Tests for the application are written with [Ginkgo](http://onsi.github.io/ginkgo/) and [Gomega](http://onsi.github.io/gomega/) to allow for BDD-style testing.
