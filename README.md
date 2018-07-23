@@ -38,3 +38,4 @@ An instrument that measures the happiness of large populations in real time.
 ## Documentation
 
 - [Technical Nodes](docs/api-notes.md)
+- [Development Notes](docs/dev-notes.m)

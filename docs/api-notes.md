@@ -71,3 +71,25 @@ Alias:
 # "go test with coverage"
 alias gotwc='go test -coverprofile=coverage.out && go tool cover -html=coverage.out && rm coverage.out'
 ```
+
+### Current Coverage
+
+```
+$ go test
+Running Suite: Server Suite
+===========================
+Random Seed: 1528162933
+Will run 10 of 10 specs
+
+06/04 - 21:42:14 58.94µs 127.0.0.1:58619 GET /invalid
+06/04 - 21:42:14 106.929µs 127.0.0.1:58620 HEAD /health
+06/04 - 21:42:14 18.175µs 127.0.0.1:58620 HEAD /ready
+06/04 - 21:42:14 15.893µs 127.0.0.1:58620 HEAD /version
+06/04 - 21:42:14 26.25µs 127.0.0.1:58620 GET /health
+06/04 - 21:42:14 84.732µs 127.0.0.1:58621 GET /version
+••••••••••
+Ran 10 of 10 Specs in 4.056 seconds
+SUCCESS! -- 10 Passed | 0 Failed | 0 Pending | 0 Skipped
+PASS
+ok  	github.com/deezone/forex-clock/server	4.311s
+```
