@@ -13,6 +13,9 @@ import (
 	"github.com/deezone/forex-clock/config"
 	"github.com/deezone/forex-clock/db"
 	"github.com/deezone/forex-clock/server/middleware"
+
+	// Third-party
+	"github.com/labstack/gommon/log"
 )
 
 type (
@@ -55,6 +58,9 @@ func (s *Server) Start() error {
 	// Set routes and middleware
 	s.SetRoutes()
 	s.GetInstance().Handler = middleware.NewMiddleware().Then(s.GetInstance().Handler)
+
+	m := "Listening for requests..."
+	log.Info(m)
 
 	go s.GetInstance().ListenAndServe()
 

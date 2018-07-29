@@ -35,6 +35,8 @@ func main() {
 	log.Info(m)
 
 	// Start server
+	m = "Starting server..."
+	log.Info(m)
 	if err := s.Start(); err != nil {
 		panic("Error starting application. Error was: " + err.Error())
 	}

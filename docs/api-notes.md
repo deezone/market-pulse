@@ -32,7 +32,16 @@ See https://github.com/marksost/configurator for an explination of how configura
 Example: `Username string `json:"username" env:"DB_USERNAME" default:"forex-clock"` where the default `DB_USERNAME` value is "forex-clock"
 - JSON configuration file
 
-> Configuration files like this are not normally used in non-development environments, but are a convenient way to develop locally without having to set a ton of environment variables.
+> Configuration files like this are not normally used in non-development environments, but are a convenient way to
+develop locally without having to set a ton of environment variables.
+
+**NOTE**: Set `configurator.ConfigLocation` (`ConfigLocation = EnvPrefix + "CONFIG"`) to the path including filename to
+the matching environment varable. This can be done at the commend line with:
+```cgo
+FOREXCLOCK_CONFIG="<path outside of app repo>/forex-clock_CONFIG.json"
+```
+as well for IDE debuging in the environment settings for the debugging session.
+
 
 - environment variables
 - command-line flag
