@@ -5,8 +5,6 @@
 package main
 
 import (
-	// Standard lib
-	"fmt"
 	"os"
 	"os/signal"
 
@@ -22,14 +20,19 @@ import (
 // Starting point for application - `go run`
 func main() {
 	m := "Starting forex-clock application..."
-	fmt.Println(m)
 	log.Info(m)
 
 	// Initialize configuration
 	config.Init()
 
+	m = "Configuration loaded..."
+	log.Info(m)
+
 	// Create new server
 	s := server.NewServer()
+
+	m = "Creating new server..."
+	log.Info(m)
 
 	// Start server
 	if err := s.Start(); err != nil {
@@ -46,6 +49,7 @@ func main() {
 		s.Stop()
 
 		// Log shut down
-		log.Info("Server is shutting down")
+		m = "Server is shutting down..."
+		log.Info(m)
 	}
 }
